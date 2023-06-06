@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply bg-red py-3 px-6 rounded-lg hover:bg-light hover:text-dark duration-300;
+}
+
+.link-item {
+  @apply relative;
+}
+
+.link-item::after {
+  @apply absolute content-[""] w-0 h-[1px] bg-light left-[50%] bottom-0 translate-x-[-50%] origin-center duration-300;
+}
+
+.link-item:hover::after {
+  @apply w-full;
+}
