@@ -19,3 +19,11 @@
 .link-item:hover::after {
   @apply w-full;
 }
+
+.wrapper {
+  @apply container mx-auto px-5 md:px-0;
+}
+
+.section-padding {
+  @apply py-10 md:py-20;
+}

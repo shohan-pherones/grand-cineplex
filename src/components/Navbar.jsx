@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <div className="flex justify-between h-20 border-b border-light/25 items-center px-5">
+    <div className="flex justify-between h-20 border-b border-light/25 items-center px-5 fixed top-0 left-0 right-0 bg-dark/0 z-[1000] backdrop-blur-xl">
       <div className="left">
         <a href="#" className="text-xl font-medium">
           Grand Cineplex
