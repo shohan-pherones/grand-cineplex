@@ -52,5 +52,23 @@
     "year": 1999,
     "rating": 8.7,
     "plot": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against the controllers of it."
+  },
+  {
+    "id": 7,
+    "title": "Interstellar",
+    "poster": "https://i.pinimg.com/originals/8e/0d/ab/8e0dab8699be85720ce55845065bf6dc.jpg",
+    "genre": "Adventure, Drama, Sci-Fi",
+    "year": 2014,
+    "rating": 8.6,
+    "plot": "A team of explorers undertakes a space journey through a wormhole to ensure humanity's survival as Earth's resources are rapidly depleting."
+  },
+  {
+    "id": 8,
+    "title": "Dune",
+    "poster": "https://imageio.forbes.com/specials-images/imageserve/61116cea2313e8bae55a536a/-Dune-/0x0.jpg?format=jpg&width=960",
+    "genre": "Adventure, Drama, Sci-Fi",
+    "year": 2021,
+    "rating": 7.9,
+    "plot": "In the distant future, a young prince embarks on a perilous journey to protect his planet and secure the future of his people, while encountering supernatural forces and political intrigue."
   }
 ]

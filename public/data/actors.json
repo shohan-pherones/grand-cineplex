@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Tom Hanks",
+    "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2022%2F09%2F27%2FTom-Hanks-092722.jpg",
+    "age": "65",
+    "nationality": "American"
+  },
+  {
+    "id": 2,
+    "name": "Meryl Streep",
+    "image": "https://media.vanityfair.com/photos/5b4df5627a97170b7549374c/4:3/w_1064,h_798,c_limit/mamma-mia-2-meryl-streep.jpg",
+    "age": "72",
+    "nationality": "American"
+  },
+  {
+    "id": 3,
+    "name": "Leonardo DiCaprio",
+    "image": "https://assets3.thrillist.com/v1/image/1656352/1200x630/flatten;crop_down;webp=auto;jpeg_quality=70",
+    "age": "47",
+    "nationality": "American"
+  },
+  {
+    "id": 4,
+    "name": "Emma Stone",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjI4NjM1NDkyN15BMl5BanBnXkFtZTgwODgyNTY1MjE@._V1_.jpg",
+    "age": "33",
+    "nationality": "American"
+  },
+  {
+    "id": 5,
+    "name": "Joaquin Phoenix",
+    "image": "https://nationaltoday.com/wp-content/uploads/2022/09/Joaquin-Phoenix.jpg",
+    "age": "48",
+    "nationality": "American"
+  },
+  {
+    "id": 6,
+    "name": "Scarlett Johansson",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Scarlett_Johansson_by_Gage_Skidmore_2_%28cropped%2C_2%29.jpg/1200px-Scarlett_Johansson_by_Gage_Skidmore_2_%28cropped%2C_2%29.jpg",
+    "age": "37",
+    "nationality": "American"
+  },
+  {
+    "id": 7,
+    "name": "Denzel Washington",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjE5NDU2Mzc3MV5BMl5BanBnXkFtZTcwNjAwNTE5OQ@@._V1_.jpg",
+    "age": "67",
+    "nationality": "American"
+  },
+  {
+    "id": 8,
+    "name": "Natalie Portman",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Natalie_Portman_%2848470988352%29_%28cropped%29.jpg",
+    "age": "41",
+    "nationality": "American"
+  }
+]

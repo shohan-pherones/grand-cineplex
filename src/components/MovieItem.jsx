@@ -1,6 +1,6 @@
 const MovieItem = ({ movie }) => {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <div className="w-full h-[30rem] overflow-hidden rounded-xl group hover:scale-90 duration-700">
         <img
           src={movie.poster}
