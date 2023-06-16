@@ -1,32 +1,34 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div className="flex justify-between h-20 border-b border-light/25 items-center px-5 fixed top-0 left-0 right-0 bg-dark/0 z-[1000] backdrop-blur-xl">
       <div className="left">
-        <a href="#" className="text-xl font-medium">
+        <Link to="/" className="text-xl font-medium">
           Grand Cineplex
-        </a>
+        </Link>
       </div>
       <div className="mid flex gap-5">
-        <a href="#" className="link-item">
+        <Link to="/" className="link-item">
           Home
-        </a>
-        <a href="#" className="link-item">
+        </Link>
+        <Link to="/movies" className="link-item">
           Movies
-        </a>
-        <a href="#" className="link-item">
+        </Link>
+        <Link to="/actors" className="link-item">
           Actors
-        </a>
-        <a href="#" className="link-item">
+        </Link>
+        <Link to="/about" className="link-item">
           About
-        </a>
-        <a href="#" className="link-item">
+        </Link>
+        <Link to="/contact" className="link-item">
           Contact
-        </a>
+        </Link>
       </div>
       <div className="right">
-        <a href="#" className="btn">
+        <Link to="/login" className="btn">
           Sign in
-        </a>
+        </Link>
       </div>
     </div>
   );

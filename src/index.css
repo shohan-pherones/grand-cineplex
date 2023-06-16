@@ -27,3 +27,13 @@
 .section-padding {
   @apply py-10 md:py-20;
 }
+
+.about-bg {
+  background-image: linear-gradient(to top, #0a0a0a, transparent),
+    url("https://images.pexels.com/photos/1089425/pexels-photo-1089425.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  width: 100%;
+  height: calc(100vh - 5rem);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
