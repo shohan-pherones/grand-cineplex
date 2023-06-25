@@ -44,12 +44,16 @@ const Hero = () => {
 
       <div className="navigators absolute left-0 right-0 m-auto w-fit z-[1] text-2xl flex gap-10 bottom-20">
         <button
+          data-aos="fade-right"
+          data-aos-duration="1000"
           onClick={prevSlide}
           className="navigators-btn h-14 w-20 bg-black border border-light/25 flex justify-center items-center hover:bg-black/60 hover:backdrop-blur-lg duration-300"
         >
           <BsArrowLeft />
         </button>
         <button
+          data-aos="fade-left"
+          data-aos-duration="1000"
           onClick={nextSlide}
           className="navigators-btn h-14 w-20 bg-black border border-light/25 flex justify-center items-center hover:bg-black/60 hover:backdrop-blur-lg duration-300"
         >

@@ -17,14 +17,22 @@ const ContactPage = () => {
 
   return (
     <div className="mt-[5rem] grid lg:grid-cols-5 gap-10 min-h-screen wrapper section-padding">
-      <div className="left col-span-2 flex justify-center items-center">
+      <div
+        className="left col-span-2 flex justify-center items-center"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
         <img src={contactImg} alt="Contact illustration" />
       </div>
       <div className="right col-span-3">
         <SectionTitle title="Contact Us" />
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-          <div className="form-control flex flex-col gap-1">
+          <div
+            className="form-control flex flex-col gap-1"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <label htmlFor="name" className="cursor-pointer">
               Name
             </label>
@@ -40,7 +48,12 @@ const ContactPage = () => {
             />
           </div>
 
-          <div className="form-control flex flex-col gap-1">
+          <div
+            className="form-control flex flex-col gap-1"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
             <label htmlFor="email" className="cursor-pointer">
               Email Address
             </label>
@@ -56,7 +69,12 @@ const ContactPage = () => {
             />
           </div>
 
-          <div className="form-control flex flex-col gap-1">
+          <div
+            className="form-control flex flex-col gap-1"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
             <label htmlFor="message" className="cursor-pointer">
               Message
             </label>
@@ -72,7 +90,13 @@ const ContactPage = () => {
             />
           </div>
 
-          <button className="btn self-start" type="submit">
+          <button
+            className="btn self-start"
+            type="submit"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="600"
+          >
             Submit
           </button>
         </form>

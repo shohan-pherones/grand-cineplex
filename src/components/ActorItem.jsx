@@ -1,6 +1,10 @@
 const ActorItem = ({ actor }) => {
   return (
-    <div className="w-full flex flex-col gap-2">
+    <div
+      className="w-full flex flex-col gap-2"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div className="w-full h-[25rem] overflow-hidden rounded-xl group hover:scale-90 duration-700">
         <img
           src={actor.image}

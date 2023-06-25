@@ -1,6 +1,10 @@
 const MovieItem = ({ movie }) => {
   return (
-    <div className="w-full overflow-hidden">
+    <div
+      className="w-full overflow-hidden"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div className="w-full h-[30rem] overflow-hidden rounded-xl group hover:scale-90 duration-700">
         <img
           src={movie.poster}

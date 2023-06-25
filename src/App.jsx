@@ -10,9 +10,16 @@ import ContactPage from "./pages/Contact";
 import LoginPage from "./pages/Login";
 import RegisterPage from "./pages/Register";
 import NotFoundPage from "./pages/NotFound";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const App = () => {
   useSmooth();
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div className="bg-dark min-h-screen text-light">

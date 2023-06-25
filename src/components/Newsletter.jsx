@@ -20,7 +20,11 @@ const Newsletter = () => {
           onSubmit={handleSubmit}
           className="flex flex-col gap-5 w-full lg:max-w-2xl"
         >
-          <div className="form-control flex flex-col gap-1">
+          <div
+            className="form-control flex flex-col gap-1"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <label htmlFor="name" className="cursor-pointer">
               Name
             </label>
@@ -33,7 +37,12 @@ const Newsletter = () => {
               className="bg-transparent border border-white/50 p-5 rounded-xl outline-none focus:border-red/60 duration-300"
             />
           </div>
-          <div className="form-control flex flex-col gap-1">
+
+          <div
+            className="form-control flex flex-col gap-1"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <label htmlFor="email" className="cursor-pointer">
               Email
             </label>
@@ -46,7 +55,10 @@ const Newsletter = () => {
               className="bg-transparent border border-white/50 p-5 rounded-xl outline-none focus:border-red/60 duration-300"
             />
           </div>
+
           <button
+            data-aos="fade-up"
+            data-aos-duration="1000"
             type="submit"
             className="bg-red py-5 rounded-xl hover:bg-light hover:text-dark duration-300"
           >
