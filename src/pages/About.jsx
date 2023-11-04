@@ -11,25 +11,17 @@ const AboutPage = () => {
             About Us
           </h2>
           <p
-            className="text-4xl"
+            className="text-2xl md:text-4xl"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="200"
           >
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           </p>
-          <button
-            className="btn"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="400"
-          >
-            Learn More
-          </button>
         </div>
       </div>
 
-      <div className="wrapper section-padding flex justify-between gap-44 text-4xl">
+      <div className="wrapper section-padding flex flex-col md:flex-row justify-between gap-44 text-2xl md:text-4xl">
         <div
           className="left flex-1"
           data-aos="fade-up"
@@ -51,7 +43,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-5 wrapper section-padding gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 wrapper section-padding gap-10">
         <div
           className=" w-full group hover:scale-90 duration-700 rounded-xl overflow-hidden"
           data-aos="fade-down"
@@ -114,7 +106,7 @@ const AboutPage = () => {
       </div>
 
       <div
-        className="wrapper section-padding text-4xl"
+        className="wrapper section-padding text-2xl md:text-4xl"
         data-aos="fade-up"
         data-aos-duration="1000"
       >

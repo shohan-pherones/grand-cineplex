@@ -1,7 +1,8 @@
 import Hero from "../components/Hero";
-import Newsletter from "../components/Newsletter";
 import PopularActors from "../components/PopularActors";
 import PopularMovies from "../components/PopularMovies";
+import AboutPage from "../pages/About";
+import ContactPage from "../pages/Contact";
 
 const HomePage = () => {
   return (
@@ -9,7 +10,8 @@ const HomePage = () => {
       <Hero />
       <PopularMovies />
       <PopularActors />
-      <Newsletter />
+      <AboutPage />
+      <ContactPage />
     </div>
   );
 };
