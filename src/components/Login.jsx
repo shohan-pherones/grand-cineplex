@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import SectionTitle from "./SectionTitle";
 import { useCallback, useState } from "react";
+import { Loader2 } from "lucide-react";
+import { axiosPost } from "../lib/axiosPost";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,11 +11,28 @@ const Login = () => {
     password: "",
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
 
-      /* TODO: send login req. to server */
+      setIsLoading(true);
+
+      const data = await axiosPost("/api/auth/login", formData);
+
+      if (data) {
+        setIsLoading(false);
+
+        setFormData({
+          email: "",
+          password: "",
+        });
+
+        toast.success("Login success");
+      } else {
+        setIsLoading(false);
+      }
     },
     [formData]
   );
@@ -53,8 +73,13 @@ const Login = () => {
           />
         </div>
 
-        <button type="submit" className="btn">
-          Login
+        <button
+          type="submit"
+          className="btn flex items-center justify-center gap-2"
+          disabled={isLoading}
+        >
+          {isLoading && <Loader2 className="animate-spin" size={20} />}{" "}
+          {isLoading ? "Logging in" : "Login"}
         </button>
 
         <p>

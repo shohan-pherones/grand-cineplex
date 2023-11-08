@@ -13,6 +13,7 @@ import NotFoundPage from "./pages/NotFound";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   useSmooth();
@@ -23,6 +24,7 @@ const App = () => {
 
   return (
     <div className="bg-dark min-h-screen text-light">
+      <Toaster />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

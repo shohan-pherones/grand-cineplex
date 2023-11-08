@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import SectionTitle from "./SectionTitle";
 import { useCallback, useState } from "react";
+import { axiosPost } from "../lib/axiosPost";
+import toast from "react-hot-toast";
+import { Loader2 } from "lucide-react";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -9,12 +12,30 @@ const Register = () => {
     password: "",
     photoUrl: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
 
-      /* TODO: send register req. to server */
+      setIsLoading(true);
+
+      const data = await axiosPost("/api/auth/register", formData);
+
+      if (data) {
+        setIsLoading(false);
+
+        setFormData({
+          name: "",
+          email: "",
+          password: "",
+          photoUrl: "",
+        });
+
+        toast.success("Register success");
+      } else {
+        setIsLoading(false);
+      }
     },
     [formData]
   );
@@ -81,8 +102,13 @@ const Register = () => {
           />
         </div>
 
-        <button type="submit" className="btn">
-          Register
+        <button
+          type="submit"
+          className="btn flex items-center justify-center gap-2"
+          disabled={isLoading}
+        >
+          {isLoading && <Loader2 className="animate-spin" size={20} />}{" "}
+          {isLoading ? "Registering" : "Register"}
         </button>
 
         <p>

@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .btn {
-  @apply bg-red py-3 px-6 rounded-lg hover:bg-light hover:text-dark duration-300 whitespace-nowrap inline-block;
+  @apply bg-red py-3 px-6 rounded-lg hover:bg-light hover:text-dark duration-300 whitespace-nowrap;
 }
 
 .link-item {
