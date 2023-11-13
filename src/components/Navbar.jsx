@@ -1,12 +1,17 @@
 import { useMediaQuery } from "@mantine/hooks";
 import { AlignJustify, X } from "lucide-react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../redux/features/auth/authSlice";
 
 const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const auth = useSelector((state) => state.auth.userAndToken);
 
   const matches = useMediaQuery("(max-width: 767px)");
+
+  const dispatch = useDispatch();
 
   return (
     <div
@@ -39,9 +44,27 @@ const Navbar = () => {
       </div>
 
       <div className="right flex gap-5 items-center">
-        <Link to="/login" className="btn">
-          Sign in
-        </Link>
+        {auth?.user ? (
+          <div className="flex items-center gap-5">
+            <Link
+              to="/profile"
+              className="w-12 h-12 rounded-full overflow-hidden"
+            >
+              <img
+                src={auth?.user?.photoUrl}
+                alt={auth?.user?.name}
+                className="w-full h-full object-cover"
+              />
+            </Link>
+            <button onClick={() => dispatch(logout())} className="btn">
+              Log out
+            </button>
+          </div>
+        ) : (
+          <Link to="/login" className="btn">
+            Sign in
+          </Link>
+        )}
 
         <button
           className="z-[1002] block md:hidden"

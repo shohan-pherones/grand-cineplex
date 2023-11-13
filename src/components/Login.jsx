@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SectionTitle from "./SectionTitle";
 import { useCallback, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { axiosPost } from "../lib/axiosPost";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/features/auth/authSlice";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +14,9 @@ const Login = () => {
   });
 
   const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = useCallback(
     async (e) => {
@@ -29,7 +34,10 @@ const Login = () => {
           password: "",
         });
 
+        dispatch(login(data));
+
         toast.success("Login success");
+        navigate("/");
       } else {
         setIsLoading(false);
       }

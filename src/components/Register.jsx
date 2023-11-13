@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SectionTitle from "./SectionTitle";
 import { useCallback, useState } from "react";
 import { axiosPost } from "../lib/axiosPost";
 import toast from "react-hot-toast";
 import { Loader2 } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/features/auth/authSlice";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +15,9 @@ const Register = () => {
     photoUrl: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = useCallback(
     async (e) => {
@@ -32,7 +37,10 @@ const Register = () => {
           photoUrl: "",
         });
 
+        dispatch(login(data));
+
         toast.success("Register success");
+        navigate("/");
       } else {
         setIsLoading(false);
       }
