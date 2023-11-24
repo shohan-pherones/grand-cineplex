@@ -2,8 +2,10 @@ import { useCallback, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { axiosPut } from "../lib/axiosPut";
-import { login } from "../redux/features/auth/authSlice";
+import { axiosDelete } from "../lib/axiosDelete";
+import { login, logout } from "../redux/features/auth/authSlice";
 import { Loader2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
   const auth = useSelector((state) => state.auth.userAndToken);
@@ -18,8 +20,10 @@ const ProfilePage = () => {
     photoUrl: auth?.user?.photoUrl,
   });
   const [isLoadingForUpdate, setisLoadingForUpdate] = useState(false);
+  const [isLoadingForDelete, setisLoadingForDelete] = useState(false);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleUpdate = useCallback(
     async (e) => {
@@ -45,6 +49,26 @@ const ProfilePage = () => {
     },
     [formData]
   );
+
+  const handleDelete = async () => {
+    setisLoadingForDelete(true);
+
+    const data = await axiosDelete(
+      `/api/users/${auth?.user?._id}`,
+      auth?.token
+    );
+
+    if (data) {
+      setisLoadingForDelete(false);
+
+      navigate("/");
+      dispatch(logout());
+
+      toast.success("User deleted!");
+    } else {
+      setisLoadingForDelete(false);
+    }
+  };
 
   return (
     <div className="pt-[5rem]">
@@ -121,8 +145,15 @@ const ProfilePage = () => {
             </button>
           </form>
 
-          <button className="btn flex items-center justify-center gap-2">
-            Delete
+          <button
+            onClick={handleDelete}
+            disabled={isLoadingForDelete}
+            className="btn flex items-center justify-center gap-2"
+          >
+            {isLoadingForDelete && (
+              <Loader2 className="animate-spin" size={20} />
+            )}{" "}
+            {isLoadingForDelete ? "Deleting" : "Delete"}
           </button>
         </div>
       </div>
