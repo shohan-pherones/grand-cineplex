@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const MovieItem = ({ movie }) => {
+  const navigate = useNavigate();
+
   return (
     <div
       className="w-full overflow-hidden"
@@ -7,7 +11,7 @@ const MovieItem = ({ movie }) => {
     >
       <div className="w-full h-[30rem] overflow-hidden rounded-xl group hover:scale-90 duration-700">
         <img
-          src={movie.poster}
+          src={movie.posters[0]}
           alt={movie.title}
           className="w-full h-full object-cover group-hover:scale-125 duration-1000"
         />
@@ -19,7 +23,12 @@ const MovieItem = ({ movie }) => {
         <p className="text-red font-medium">{movie.rating}/10</p>
       </div>
       <p className="text-light/50">{movie.genre}</p>
-      <button className="btn w-full mt-3">View Details</button>
+      <button
+        onClick={() => navigate(`/movies/${movie._id}`)}
+        className="btn w-full mt-3"
+      >
+        View Details
+      </button>
     </div>
   );
 };
