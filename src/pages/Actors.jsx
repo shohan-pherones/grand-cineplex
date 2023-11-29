@@ -3,7 +3,7 @@ import PopularActors from "../components/PopularActors";
 const ActorsPage = () => {
   return (
     <div className="pt-[5rem]">
-      <PopularActors />
+      <PopularActors isNative />
     </div>
   );
 };

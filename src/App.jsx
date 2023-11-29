@@ -1,20 +1,22 @@
-import { useSmooth } from "./hooks/useSmooth";
-import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/Home";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import MoviesPage from "./pages/Movies";
-import ActorsPage from "./pages/Actors";
-import AboutPage from "./pages/About";
-import ContactPage from "./pages/Contact";
-import LoginPage from "./pages/Login";
-import RegisterPage from "./pages/Register";
-import NotFoundPage from "./pages/NotFound";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
+import { Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import { useSmooth } from "./hooks/useSmooth";
+import AboutPage from "./pages/About";
+import ActorDetailsPage from "./pages/ActorDetailsPage";
+import ActorsPage from "./pages/Actors";
+import ContactPage from "./pages/Contact";
+import HomePage from "./pages/Home";
+import LoginPage from "./pages/Login";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
+import MoviesPage from "./pages/Movies";
+import NotFoundPage from "./pages/NotFound";
 import ProfilePage from "./pages/Profile";
+import RegisterPage from "./pages/Register";
 
 const App = () => {
   useSmooth();
@@ -30,7 +32,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movies/:id" element={<MovieDetailsPage />} />
         <Route path="/actors" element={<ActorsPage />} />
+        <Route path="/actors/:id" element={<ActorDetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />

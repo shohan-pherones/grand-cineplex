@@ -20,12 +20,13 @@ const PopularMovies = ({ isNative }) => {
       {movies && (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
           {isNative &&
-            movies.map((movie) => <MovieItem key={movie.id} movie={movie} />)}
+            movies.map((movie) => <MovieItem key={movie._id} movie={movie} />)}
 
           {!isNative &&
             movies
+              .sort((a, b) => b.rating - a.rating)
               .slice(0, 8)
-              .map((movie) => <MovieItem key={movie.id} movie={movie} />)}
+              .map((movie) => <MovieItem key={movie._id} movie={movie} />)}
         </div>
       )}
 
