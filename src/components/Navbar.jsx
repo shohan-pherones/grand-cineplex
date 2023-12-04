@@ -41,6 +41,11 @@ const Navbar = () => {
         <Link to="/contact" className="link-item">
           Contact
         </Link>
+        {auth?.user?.role === "admin" && (
+          <Link to="/admin/manage-movies" className="link-item">
+            Manage Movies
+          </Link>
+        )}
       </div>
 
       <div className="right flex gap-5 items-center">
@@ -95,6 +100,11 @@ const Navbar = () => {
             <Link to="/contact" className="link-item">
               Contact
             </Link>
+            {auth?.user?.role === "admin" && (
+              <Link to="/admin/manage-movies" className="link-item">
+                Manage Movies
+              </Link>
+            )}
           </div>
         </div>
       )}

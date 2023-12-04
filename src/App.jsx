@@ -17,6 +17,7 @@ import MoviesPage from "./pages/Movies";
 import NotFoundPage from "./pages/NotFound";
 import ProfilePage from "./pages/Profile";
 import RegisterPage from "./pages/Register";
+import ManageMoviesPage from "./pages/ManageMoviesPage";
 
 const App = () => {
   useSmooth();
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/admin/manage-movies" element={<ManageMoviesPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
