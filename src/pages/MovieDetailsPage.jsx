@@ -2,12 +2,34 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import { useSelector } from "react-redux";
+import toast from "react-hot-toast";
+import { axiosPut } from "../lib/axiosPut";
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
   const { data: movie, isLoading, error } = useFetch(`/api/movies/${id}`);
+  const auth = useSelector((state) => state.auth.userAndToken);
 
   const navigate = useNavigate();
+
+  const handleFavourite = async () => {
+    if (!auth?.user?.email) {
+      toast.error("You can not mark as favourite, login first.");
+      navigate("/login");
+      return;
+    }
+
+    const data = await axiosPut(
+      `/api/movies/mark-favorite/${id}`,
+      { movie_id: id },
+      auth?.token
+    );
+
+    if (data) {
+      toast.success(data.message);
+    }
+  };
 
   return (
     <div className="mt-20 h-[calc(100vh-5rem)]">
@@ -47,7 +69,9 @@ const MovieDetailsPage = () => {
               <button className="btn" onClick={() => navigate(-1)}>
                 Go back
               </button>
-              <button className="btn">Mark as favourite</button>
+              <button className="btn" onClick={handleFavourite}>
+                Mark as favourite
+              </button>
             </div>
           </div>
         </div>
