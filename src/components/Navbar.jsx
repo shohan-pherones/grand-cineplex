@@ -2,7 +2,7 @@ import { useMediaQuery } from "@mantine/hooks";
 import { AlignJustify, X } from "lucide-react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../redux/features/auth/authSlice";
 
 const Navbar = () => {
@@ -12,6 +12,7 @@ const Navbar = () => {
   const matches = useMediaQuery("(max-width: 767px)");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div
@@ -61,7 +62,13 @@ const Navbar = () => {
                 className="w-full h-full object-cover"
               />
             </Link>
-            <button onClick={() => dispatch(logout())} className="btn">
+            <button
+              onClick={() => {
+                dispatch(logout());
+                navigate("/");
+              }}
+              className="btn"
+            >
               Log out
             </button>
           </div>

@@ -1,10 +1,11 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { useFetch } from "../hooks/useFetch";
-import Loading from "../components/Loading";
-import Error from "../components/Error";
-import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
+import { useFetch } from "../hooks/useFetch";
 import { axiosPut } from "../lib/axiosPut";
+import { saveMovie } from "../redux/features/auth/authSlice";
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
@@ -12,6 +13,7 @@ const MovieDetailsPage = () => {
   const auth = useSelector((state) => state.auth.userAndToken);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleFavourite = async () => {
     if (!auth?.user?.email) {
@@ -28,6 +30,7 @@ const MovieDetailsPage = () => {
 
     if (data) {
       toast.success(data.message);
+      dispatch(saveMovie(movie));
     }
   };
 
@@ -69,9 +72,15 @@ const MovieDetailsPage = () => {
               <button className="btn" onClick={() => navigate(-1)}>
                 Go back
               </button>
-              <button className="btn" onClick={handleFavourite}>
-                Mark as favourite
-              </button>
+              {auth?.user?.favorites.find((mv) => mv._id === movie._id) ? (
+                <button disabled className="btn pointer-events-none">
+                  Already marked as favorite
+                </button>
+              ) : (
+                <button className="btn" onClick={handleFavourite}>
+                  Mark as favourite
+                </button>
+              )}
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { axiosPut } from "../lib/axiosPut";
 import { axiosDelete } from "../lib/axiosDelete";
 import { login, logout } from "../redux/features/auth/authSlice";
 import { Loader2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
   const auth = useSelector((state) => state.auth.userAndToken);
@@ -155,6 +155,9 @@ const ProfilePage = () => {
             )}{" "}
             {isLoadingForDelete ? "Deleting" : "Delete"}
           </button>
+          <Link className="btn text-center" to="/profile/favorite-list">
+            View your favorite list
+          </Link>
         </div>
       </div>
     </div>

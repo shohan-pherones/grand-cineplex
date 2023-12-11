@@ -15,9 +15,13 @@ export const authSlice = createSlice({
     logout: (state) => {
       state.userAndToken = null;
     },
+
+    saveMovie: (state, action) => {
+      state.userAndToken?.user?.favorites?.push(action.payload);
+    },
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout, saveMovie } = authSlice.actions;
 
 export default authSlice.reducer;
